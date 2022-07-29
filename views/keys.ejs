@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Inventario Audio Suite</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-center"><a style="color: white;" href="/">Inventario de Audio Suite</a></h1>
+        <br>
+    </div>
+    <section class="container">
+        <div class="header__body">
+          <h2><%=title%></h2>
+          <a data-toggle="modal" data-target="#estudianteModal" ><i class="bi bi-patch-plus"></i> Nuevo registros
+          </a>  
+        </div>
+    </section>
+    <main class="container">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Objeto</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% if(num>0){ objetos.forEach(objeto => { %>
+                <tr>
+                    <th><%= objeto.id %></th>
+                    <th><%= objeto.nombre %></th>
+                    <th><%= objeto.cantidad %></th>
+                    <th>
+                        <form action="/delete/<%=key%>/<%= objeto.id %>" method="POST">
+                            <button class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </th>
+                </tr>
+                <% })}else if(num == 0){ %>
+                <tr>
+                    <th colspan="4" class="text-center">
+                        No hay Registros Actualmente
+                    </th>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </main>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="estudianteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <form action="/insert/<%=key%>" method="POST">
+
+                      <div class="modal-body">
+                        <div class="form-group">
+                            <label for="">Nombre de Objeto</label>
+                            <input class="form-control" type="text" name="nombre">
+                        </div>
+                        <div>
+                            <label>Cantidad</label>
+                            <input type="number" class="form-control" name="cantidad">
+                        </div>
+                      </div>
+
+                      <!--fin de card-body-->
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+              </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>

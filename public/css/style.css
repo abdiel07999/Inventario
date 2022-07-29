@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+:root{
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    color: rgb(0, 38, 46);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+a{
+    cursor: pointer;
+}
+h1{
+    font-size: 2.5rem;
+}
+h2{
+    font-family: 2rem;
+}
+.--centrarTexto{
+    text-align: center;
+}
+.--contenedor{
+    line-height: 1;
+    color: black;
+    transition: all 500ms;
+    text-align: center;
+    height: 200px;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+}
+.--contenedor p{
+    margin: 0;
+}
+.header{
+    padding-top: 2rem;
+}
+.bi{
+    font-size: 100px;
+    display: block;
+}
+.boxes{
+    padding: 5rem 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+.a:hover{
+    border-radius: 50px;
+    color: white;
+    z-index: 1;
+    background: #5c85ff;
+    box-shadow:  20px 20px 60px #4e71d9,
+             -20px -20px 60px #6a99ff;
+}
+.v:hover{
+    color: white;
+    z-index: 1;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #398433, #439d3d);
+    box-shadow:  20px 20px 60px #367d30,
+                 -20px -20px 60px #48a942;
+}
+.n:hover{
+    color: white;
+    z-index: 1;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #1e1e1e, #232323);
+        box-shadow:  20px 20px 60px #1c1c1c,
+             -20px -20px 60px #262626;
+}
+.header{
+    background-color: #232323;
+    color: white;
+}
+.header__body{
+    display: flex;
+    text-align: center;
+    margin: 1rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__body a{
+    color: rgb(0, 38, 46);
+    padding: .5rem 2rem;
+    border-radius: 39px;
+    background: linear-gradient(145deg, #ffffff, #e3e3e3);
+    box-shadow:  5px 5px 5px #f9f9f9,
+                 -5px -5px 5px #ffffff;
+}
+.header__body a:hover{
+    text-decoration: none;
+    border-radius: 39px;
+background: linear-gradient(145deg, #e3e3e3, #ffffff);
+box-shadow:  5px 5px 5px #f9f9f9,
+             -5px -5px 5px #ffffff;
+}
+.header__body a i{
+    font-size: 2rem;
+}
+.modal-body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:30px;
+
+}
