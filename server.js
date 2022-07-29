@@ -58,7 +58,7 @@ DENTRO DE CONEXION.QUERY SE ENCUENTRA LA CONSULTA A MYSQL, DESPUES DE ESO ARROJA
 */
 app.get('/keyVerde', (req,res) => {
     const key = req.params.key
-    conexion.query('SELECT * FROM keyverde', function(err, results){
+    conexion.query('SELECT * FROM keyVerde', function(err, results){
         if (err){
             throw err;
         }
@@ -72,7 +72,7 @@ app.get('/keyVerde', (req,res) => {
 })
 app.get('/keyAzul', (req,res) => {
     const key = req.params.key
-    conexion.query('SELECT * FROM keyazul', function(err, results){
+    conexion.query('SELECT * FROM keyAzul', function(err, results){
         if (err){
             throw err;
         }
@@ -86,7 +86,7 @@ app.get('/keyAzul', (req,res) => {
 })
 app.get('/keyNegro', (req,res) => {
     const key = req.params.key
-    conexion.query('SELECT * FROM keynegro', function(err, results){
+    conexion.query('SELECT * FROM keyNegro', function(err, results){
         if (err){
             throw err;
         }
