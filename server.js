@@ -22,10 +22,10 @@ app.use(bodyParser.urlencoded({ extended:false }))
 
 //CONEXIÓN CON LA BASE DE DATOS
 const conexion = mysql.createConnection({
-    host : 'localhost',
-    database : 'inventario',
-    user : 'root',
-    password : ''
+    host : 'mysql-inventario-audiosuite.alwaysdata.net',
+    database : 'inventario-audiosuite_inventario',
+    user : '276951',
+    password : '@49S99L7cpDvVb@'
 
 })
 
